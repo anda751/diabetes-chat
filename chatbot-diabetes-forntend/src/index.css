@@ -1,0 +1,21 @@
+@import "tailwindcss";
+/* ตกแต่ง Scrollbar ให้ดู Minimal สำหรับ Laptop */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+/* ลบเงาสะท้อนเมื่อคลิกบนมือถือ */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ป้องกันการ Scroll แผ่นหลังเมื่อเปิดบนคอม */
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}

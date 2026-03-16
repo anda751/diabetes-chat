@@ -10,7 +10,7 @@ export default function Dashboard({ user, onGoToChat, onGoToRecord, onGoToReport
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const sRes = await fetch(`http://127.0.0.1:5000/api/stats/${user}`);
+        const sRes = await fetch(`https://diabetes-chat-1.onrender.com/api/stats/${user}`);
         if (sRes.ok) {
           const sData = await sRes.json();
           setStats(sData);

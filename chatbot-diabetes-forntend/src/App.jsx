@@ -20,7 +20,7 @@ export default function App() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/register', {
+      const res = await fetch('https://diabetes-chat-1.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -35,7 +35,7 @@ export default function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/login', {
+      const res = await fetch('https://diabetes-chat-1.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -44,7 +44,7 @@ export default function App() {
       
       if (res.ok) {
         setUser(data.username);
-        const profileRes = await fetch(`http://127.0.0.1:5000/api/profile/${data.username}`);
+        const profileRes = await fetch(`https://diabetes-chat-1.onrender.com/api/profile/${data.username}`);
         if (profileRes.ok) {
           setPage('dashboard');
         } else {
@@ -65,7 +65,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/chat', {
+      const res = await fetch('https://diabetes-chat-1.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user, message: userMsg })

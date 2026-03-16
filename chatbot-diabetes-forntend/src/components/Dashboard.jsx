@@ -16,13 +16,13 @@ export default function Dashboard({ user, onGoToChat, onGoToRecord, onGoToReport
           setStats(sData);
         }
 
-        const gRes = await fetch(`http://127.0.0.1:5000/api/graph/${user}/${timeRange}`);
+        const gRes = await fetch(`https://diabetes-chat-1.onrender.com/api/graph/${user}/${timeRange}`);
         if (gRes.ok) {
           const gData = await gRes.json();
           setGraphData(gData);
         }
 
-        const pRes = await fetch(`http://127.0.0.1:5000/api/profile/${user}`);
+        const pRes = await fetch(`https://diabetes-chat-1.onrender.com/api/profile/${user}`);
         if (pRes.ok) {
           const pData = await pRes.json();
           setProfile(pData);

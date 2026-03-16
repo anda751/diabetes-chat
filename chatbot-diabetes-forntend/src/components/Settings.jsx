@@ -7,7 +7,7 @@ export default function Settings({ user, onBack }) {
 
   useEffect(() => {
     // ดึงข้อมูลเดิมมาโชว์
-    fetch(`http://127.0.0.1:5000/api/profile/${user}`)
+    fetch(`https://diabetes-chat-1.onrender.com/api/profile/${user}`)
       .then(res => res.json())
       .then(data => setProfile(data))
       .catch(err => console.error(err));
@@ -15,7 +15,7 @@ export default function Settings({ user, onBack }) {
 
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://127.0.0.1:5000/api/save_profile', {
+    const res = await fetch('https://diabetes-chat-1.onrender.com/api/save_profile', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(profile)
@@ -25,7 +25,7 @@ export default function Settings({ user, onBack }) {
 
   const handleChangePassword = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://127.0.0.1:5000/api/update_password', {
+    const res = await fetch('https://diabetes-chat-1.onrender.com/api/update_password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: user, new_password: newPassword })

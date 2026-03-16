@@ -11,7 +11,7 @@ export default function Report({ user, onBack }) {
     
     // FIX: ปรับ URL ให้ส่งแค่ค่า range (เช่น /anda/7 หรือ /anda/all) 
     // เพื่อให้ตรงกับโครงสร้าง API ทั่วไป และป้องกัน Error 404
-    const fetchUrl = `http://127.0.0.1:5000/api/report/${user}/${range}`;
+    const fetchUrl = `https://diabetes-chat-1.onrender.com/api/report/${user}/${range}`;
 
     fetch(fetchUrl)
       .then(res => {
@@ -33,7 +33,7 @@ export default function Report({ user, onBack }) {
   const handleExportExcel = async () => {
     if (records.length === 0) return alert("ไม่มีข้อมูลสำหรับการดาวน์โหลด");
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/export/excel', {
+      const response = await fetch('https://diabetes-chat-1.onrender.com/api/export/excel', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user, records: records })
@@ -55,7 +55,7 @@ export default function Report({ user, onBack }) {
   const handleExportPDF = async () => {
     if (records.length === 0) return alert("ไม่มีข้อมูลสำหรับการดาวน์โหลด");
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/export/pdf', {
+      const res = await fetch('https://diabetes-chat-1.onrender.com/api/export/pdf', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: user, records: records })
